@@ -50,10 +50,8 @@
   <ItemGroup>
     <Compile Include="DAL\SchoolContext.cs" />
     <Compile Include="DomainModel\Course.cs" />
-    <Compile Include="DomainModel\Department.cs" />
     <Compile Include="DomainModel\Enrollment.cs" />
     <Compile Include="DomainModel\Instructor.cs" />
-    <Compile Include="DomainModel\OfficeAssignment.cs" />
     <Compile Include="DomainModel\Person.cs" />
     <Compile Include="DomainModel\Student.cs" />
     <Compile Include="Program.cs" />
