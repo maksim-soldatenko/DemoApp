@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\SchoolContext.cs" />
     <Compile Include="DomainModel\Course.cs" />
     <Compile Include="DomainModel\Department.cs" />
     <Compile Include="DomainModel\Enrollment.cs" />
