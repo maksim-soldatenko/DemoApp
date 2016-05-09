@@ -48,12 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandInterceptors\SchoolInterceptorLogging.cs" />
     <Compile Include="DAL\SchoolContext.cs" />
     <Compile Include="DomainModel\Course.cs" />
     <Compile Include="DomainModel\Enrollment.cs" />
     <Compile Include="DomainModel\Instructor.cs" />
     <Compile Include="DomainModel\Person.cs" />
     <Compile Include="DomainModel\Student.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\Logger.cs" />
     <Compile Include="Migrations\201605091515029_InitialMigration.cs" />
     <Compile Include="Migrations\201605091515029_InitialMigration.Designer.cs">
       <DependentUpon>201605091515029_InitialMigration.cs</DependentUpon>
