@@ -54,6 +54,7 @@
     <Compile Include="DomainModel\Instructor.cs" />
     <Compile Include="DomainModel\Person.cs" />
     <Compile Include="DomainModel\Student.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
