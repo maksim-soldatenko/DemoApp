@@ -113,56 +113,49 @@ namespace DemoApp.Migrations
             {
                 new Course
                 {
-                    CourseId = 1050,
                     Title = "Chemistry",
                     Credits = 3,
                     Instructors = new List<Instructor>()
                 },
                 new Course
                 {
-                    CourseId = 4022,
                     Title = "Microeconomics",
                     Credits = 3,
                     Instructors = new List<Instructor>()
                 },
                 new Course
                 {
-                    CourseId = 4041,
                     Title = "Macroeconomics",
                     Credits = 3,
                     Instructors = new List<Instructor>()
                 },
                 new Course
                 {
-                    CourseId = 1045,
                     Title = "Calculus",
                     Credits = 4,
                     Instructors = new List<Instructor>()
                 },
                 new Course
                 {
-                    CourseId = 3141,
                     Title = "Trigonometry",
                     Credits = 4,
                     Instructors = new List<Instructor>()
                 },
                 new Course
                 {
-                    CourseId = 2021,
                     Title = "Composition",
                     Credits = 3,
                     Instructors = new List<Instructor>()
                 },
                 new Course
                 {
-                    CourseId = 2042,
                     Title = "Literature",
                     Credits = 4,
                     Instructors = new List<Instructor>()
                 },
             };
 
-            courses.ForEach(s => context.Courses.AddOrUpdate(p => p.CourseId, s));
+            courses.ForEach(s => context.Courses.AddOrUpdate(p => p.Title, s));
             context.SaveChanges();
 
             AddOrUpdateInstructor(context, "Chemistry", "Kapoor");
@@ -237,8 +230,8 @@ namespace DemoApp.Migrations
 
             foreach (Enrollment e in enrollments)
             {
-                var enrollmentInDataBase = context.Enrollments.SingleOrDefault(s => s.Student.Id == e.StudentId);
-                if (enrollmentInDataBase == null)
+                var enrollmentInDataBase = context.Enrollments.Any(s => s.Student.Id == e.StudentId);
+                if (!enrollmentInDataBase)
                 {
                     context.Enrollments.Add(e);
                 }
@@ -249,8 +242,8 @@ namespace DemoApp.Migrations
         private void AddOrUpdateInstructor(SchoolContext context, string courseTitle, string instructorName)
         {
             var crs = context.Courses.SingleOrDefault(c => c.Title == courseTitle);
-            var inst = crs.Instructors.SingleOrDefault(i => i.LastName == instructorName);
-            if (inst == null)
+            var inst = crs.Instructors.Any(i => i.LastName == instructorName);
+            if (!inst)
                 crs.Instructors.Add(context.Instructors.Single(i => i.LastName == instructorName));
         }
     }
