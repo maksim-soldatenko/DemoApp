@@ -20,6 +20,10 @@ namespace DemoApp.DAL
         {
         }
 
-
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Student>().ToTable("Students");
+            modelBuilder.Entity<Instructor>().ToTable("Instructors");
+        }
     }
 }
