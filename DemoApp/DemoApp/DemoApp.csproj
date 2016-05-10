@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="CommandInterceptors\SchoolInterceptorLogging.cs" />
     <Compile Include="DAL\SchoolContext.cs" />
+    <Compile Include="DbConfigurations\SchoolConfiguration.cs" />
     <Compile Include="DomainModel\Course.cs" />
     <Compile Include="DomainModel\Enrollment.cs" />
     <Compile Include="DomainModel\Instructor.cs" />
